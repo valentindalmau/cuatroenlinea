@@ -22,7 +22,11 @@ def contenido_fila(nro_fila, tablero):
     for columna in tablero[nro_fila-1]:
         fila.append(columna)
     return fila
-
+def devolver_todas_las_columnas(tablero):
+    columnas = []
+    for columna in range(1,8):
+        columnas.append(contenido_columna(columna,tablero))
+    return columnas
 
 def secuencia_correcta(secuencia):
     c = 0
@@ -81,3 +85,4 @@ else:
     print(f'La secuencia es incorrecta, ingrese valores entre 1 y 7')
 print(contenido_columna(2,tablero))
 print(contenido_fila(1, tablero))
+print(devolver_todas_las_columnas(tablero))
