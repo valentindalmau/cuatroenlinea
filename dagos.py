@@ -27,6 +27,11 @@ def devolver_todas_las_columnas(tablero):
     for columna in range(1,8):
         columnas.append(contenido_columna(columna,tablero))
     return columnas
+def devolver_todas_las_filas(tablero):
+    filas = []
+    for fila in tablero:
+        filas.append(fila)
+    return filas
 
 def secuencia_correcta(secuencia):
     c = 0
@@ -86,3 +91,4 @@ else:
 print(contenido_columna(2,tablero))
 print(contenido_fila(1, tablero))
 print(devolver_todas_las_columnas(tablero))
+print(devolver_todas_las_filas(tablero))
