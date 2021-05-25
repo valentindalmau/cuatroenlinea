@@ -45,15 +45,16 @@ def soltar_ficha_en_tablero(ficha, columna, tablero):
 # y termina la funcion posicionando la ficha en dicha posición.
 
 def completar_tablero_en_orden(secuencia, tablero):
-    c=0
-    while(c<len(secuencia)):
-        if(c%2==0):
+    c = 0
+    while (c < len(secuencia)):
+        if (c % 2 == 0):
             soltar_ficha_en_tablero(1, secuencia[c], tablero)
         else:
             soltar_ficha_en_tablero(2, secuencia[c], tablero)
 
-        c+=1
+        c += 1
     return
+
 
 # En esta función se determina si la ficha será un 1 o un 2, dependiendo del jugador
 
@@ -61,18 +62,16 @@ def dibujar_tablero(tablero):
     for i in tablero:
         print(*i)
     return
+
+
 # Esta función dibuja el tablero en la terminal, imprimiendo fila a fila
 # Lo que hace print(*i) es desempaquetar una fila de filas
-secuencia=[1,2,3,4,5,6,7,1,1,1,8]
+
+secuencia = [1, 2, 3, 4, 5, 6, 7, 1, 1, 1, 7]
 tablero = tablero_vacio()
-if(secuencia_correcta(secuencia)==0):
+if (secuencia_correcta(secuencia) == 0):
     completar_tablero_en_orden(secuencia, tablero)
     dibujar_tablero(tablero)
 else:
     print(f'La secuencia es incorrecta, ingrese valores entre 1 y 7')
-
-
-
-
-
-
+print(contenido_columna(1,tablero))
