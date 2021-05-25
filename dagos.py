@@ -1,31 +1,42 @@
 def tablero_vacio():
     return [
-           [0, 0, 0, 0, 0, 0, 0],
-           [0, 0, 0, 0, 0, 0, 0],
-           [0, 0, 0, 0, 0, 0, 0],
-           [0, 0, 0, 0, 0, 0, 0],
-           [0, 0, 0, 0, 0, 0, 0],
-           [0, 0, 0, 0, 0, 0, 0]
-           ]
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0]
+    ]
+
+
 # Esta función devuelve un tablero de 6 filas y 7 columnas, en donde todos los valores son 0
 # tablero=[fila][columna]
+def contenido_columna(nro_columna, tablero):
+    columna = []
+    for fila in tablero:
+        celda = fila[nro_columna-1]
+        columna.append(celda)
+    return columna
+
 
 def secuencia_correcta(secuencia):
-    c=0
-    while c<len(secuencia):
+    c = 0
+    while c < len(secuencia):
         if (secuencia[c] > 7 or secuencia[c] < 1):
             return 1
-        c+=1
+        c += 1
     return 0
+
 
 # Esta función toma la secuencia y se fija si todos sus valores están entre 1 y 7
 # En ese caso devuelve 0, caso contrario devuelve 1
 
-def soltar_ficha_en_tablero(ficha,columna,tablero):
-    for fila in range(6,0,-1):
+def soltar_ficha_en_tablero(ficha, columna, tablero):
+    for fila in range(6, 0, -1):
         if (tablero[fila - 1][columna - 1] == 0):
             tablero[fila - 1][columna - 1] = ficha
             return
+
 
 # Esta función tiene 3 parámetros, la ficha, que sera 1 o 2 dependiendo del jugador,
 # la columna que sera la secuencia, y finalmente el tablero.
