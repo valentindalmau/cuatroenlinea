@@ -41,7 +41,7 @@ def dibujar_tablero(tablero):
     return
 # Esta función dibuja el tablero en la terminal, imprimiendo fila a fila
 # Lo que hace print(*i) es desempaquetar una fila de fila
-secuencia=[1,2,3,4,5,6,7,1,1,1]
+secuencia=[1,2,3,4,5,6,7,1,1,1,2,3]
 tablero=tablero_vacio()
 completar_tablero_en_orden(secuencia, tablero)
 dibujar_tablero(tablero)
