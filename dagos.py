@@ -17,6 +17,11 @@ def contenido_columna(nro_columna, tablero):
         celda = fila[nro_columna-1]
         columna.append(celda)
     return columna
+def contenido_fila(nro_fila, tablero):
+    fila = []
+    for columna in tablero[nro_fila-1]:
+        fila.append(columna)
+    return fila
 
 
 def secuencia_correcta(secuencia):
@@ -74,4 +79,5 @@ if (secuencia_correcta(secuencia) == 0):
     dibujar_tablero(tablero)
 else:
     print(f'La secuencia es incorrecta, ingrese valores entre 1 y 7')
-print(contenido_columna(1,tablero))
+print(contenido_columna(2,tablero))
+print(contenido_fila(1, tablero))
