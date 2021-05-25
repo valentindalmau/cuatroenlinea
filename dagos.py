@@ -10,6 +10,17 @@ def tablero_vacio():
 # Esta función devuelve un tablero de 6 filas y 7 columnas, en donde todos los valores son 0
 # tablero=[fila][columna]
 
+def secuencia_correcta(secuencia):
+    c=0
+    while c<len(secuencia):
+        if (secuencia[c] > 7 or secuencia[c] < 1):
+            return 1
+        c+=1
+    return 0
+
+# Esta función toma la secuencia y se fija si todos sus valores están entre 1 y 7
+# En ese caso devuelve 0, caso contrario devuelve 1
+
 def soltar_ficha_en_tablero(ficha,columna,tablero):
     for fila in range(6,0,-1):
         if (tablero[fila - 1][columna - 1] == 0):
@@ -40,9 +51,17 @@ def dibujar_tablero(tablero):
         print(*i)
     return
 # Esta función dibuja el tablero en la terminal, imprimiendo fila a fila
-# Lo que hace print(*i) es desempaquetar una fila de fila
-secuencia=[1,2,3,4,5,6,7,1,1,1,2,3]
-tablero=tablero_vacio()
-completar_tablero_en_orden(secuencia, tablero)
-dibujar_tablero(tablero)
+# Lo que hace print(*i) es desempaquetar una fila de filas
+secuencia=[1,2,3,4,5,6,7,1,1,1,8]
+tablero = tablero_vacio()
+if(secuencia_correcta(secuencia)==0):
+    completar_tablero_en_orden(secuencia, tablero)
+    dibujar_tablero(tablero)
+else:
+    print(f'La secuencia es incorrecta, ingrese valores entre 1 y 7')
+
+
+
+
+
 
