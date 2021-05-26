@@ -73,13 +73,22 @@ def completar_tablero_en_orden(secuencia, tablero):
 # En esta función se determina si la ficha será un 1 o un 2, dependiendo del jugador
 
 def dibujar_tablero(tablero):
-    for i in tablero:
-        print(*i)
+    print("+---------------+")
+    for fila in tablero:
+        print("|", end=" ")
+        for celda in fila:
+            if celda == 0:
+                print("0", end = " ")
+            else:
+                print("%s" % celda, end = " ")
+        print("|")
+    print("+---------------+")
+
     return
 
 
-# Esta función dibuja el tablero en la terminal, imprimiendo fila a fila
-# Lo que hace print(*i) es desempaquetar una fila de filas
+# Esta función dibuja el tablero en la terminal con bordes, imprimiendo fila a fila
+# y celda a celda en un for adentro de un for
 
 secuencia = [1, 2, 3, 4, 5, 6, 7, 1, 1, 1, 7]
 tablero = tablero_vacio()
