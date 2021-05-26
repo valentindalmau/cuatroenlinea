@@ -90,7 +90,10 @@ def dibujar_tablero(tablero):
 # Esta función dibuja el tablero en la terminal con bordes, imprimiendo fila a fila
 # y celda a celda en un for adentro de un for
 
-secuencia = [1, 2, 3, 4, 5, 6, 7, 1, 1, 1, 7]
+secuencia_texto = input("introduzca la secuencia: ")
+secuencia = []
+for items in secuencia_texto.split(','):
+    secuencia.append(int(items))
 tablero = tablero_vacio()
 if (secuencia_correcta(secuencia) == 0):
     completar_tablero_en_orden(secuencia, tablero)
